@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="locahost:8888/user"  method="post">
+    <div>
+        姓名：<input type="text" id="username" name="username"/>
+    </div>
+    <div>
+        密码：<input type="password" id="password"  name="password"/>
+    </div>
+    <button type="button" onclick="aaa()">提交</button>
+    <div>
+        param：<input type="text" id="param"  name="param"/>
+    </div>
+    <button type="button" onclick="bbb()">提交</button>
+</form>
+</body>
+<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+<script>
+    function aaa() {
+        var obj = {
+            username: $("#username").val(),
+            password: $("#password").val()
+        }
+        $.ajax({
+            url: "/user",
+            type: "POST",
+            data: JSON.stringify(obj),
+            contentType:"application/json",
+            success: function (data) {
+                alert(data.msg);
+            }
+        });
+    }
+    function bbb() {
+        var a = $("#param").val() =='' ? null : $("#param").val()
+        $.ajax({
+            url: "/param",
+            type: "GET",
+            data: {
+                // name:a
+            },
+            contentType:"application/json",
+            success: function (data) {
+                alert(data.msg);
+            }
+        });
+    }
+</script>
+</html>
