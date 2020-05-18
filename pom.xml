@@ -24,7 +24,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-    <jwt.version>4.23</jwt.version>
+    <jwt.version>7.9</jwt.version>
   </properties>
 
   <dependencies>
